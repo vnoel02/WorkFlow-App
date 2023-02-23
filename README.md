@@ -2,7 +2,7 @@
 
 ## 9 Inc
 
-Victor Noel, victor.noel25@bcmain.cuny.edu, vnoel02
+Victor Noel, victor.noel25@bcmail.cuny.edu, vnoel02
 
 Name 2, Email 2, Github Username 2
 
