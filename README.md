@@ -20,4 +20,4 @@ Description: The application would have assigned specific task to periods of tim
 description ...
 
 ### Risks and Mitigation
-description: One risk we have is poor user interface. Since our app help users oraganize their scheldule it would be very important that the UI is very user friendly and customizable.
+Description: One risk we have is poor user interface. Since our app help users oraganize their scheldule it would be very important that the UI is very user friendly and customizable.
