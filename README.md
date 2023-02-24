@@ -4,7 +4,7 @@
 
 Victor Noel, victor.noel25@bcmail.cuny.edu, vnoel02
 
-Name 2, Email 2, Github Username 2
+Rodler Jean, rodjean1234@gmail.com , rodjean1234
 
 Name N, Email N, Github Username N
 
@@ -13,10 +13,10 @@ Name N, Email N, Github Username N
 ### Function 1: Notification Handling
 Description: It is important as a study/work organization app to have the ability to introduce notifications to the user. This involves some of the NotificationCampat, a class that allows use to create and modify notifications.
 
-### Function 2
-description ...
+### Function 2 : Assigned task
+Description: The application would have assigned specific task to periods of times that can be modified by the user. 
 
-### Funciton 3
+### Funciton 3 : Customizable task
 description ...
 
 ### Risks and Mitigation
