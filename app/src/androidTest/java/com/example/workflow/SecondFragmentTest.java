@@ -10,6 +10,10 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.junit.Assert.*;
 
+import android.content.Intent;
+import android.view.View;
+import android.widget.Button;
+
 import androidx.fragment.app.testing.FragmentScenario;
 import androidx.lifecycle.Lifecycle;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
@@ -21,6 +25,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(AndroidJUnit4.class)
 public class SecondFragmentTest {
+
 
     public FragmentScenario<SecondFragment> fragmentScenario;
 
@@ -51,5 +56,7 @@ public class SecondFragmentTest {
         onView(withId(R.id.activity_calendar)).check(matches(isDisplayed()));
 
     }
+
+
 
 }

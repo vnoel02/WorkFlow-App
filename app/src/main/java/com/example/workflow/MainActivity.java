@@ -1,5 +1,6 @@
 package com.example.workflow;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -17,15 +18,20 @@ import com.example.workflow.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
-
+    private Button createProfile1;
+    private Button createProfile2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -43,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        //sendUserOnClick();*/
     }
 
     @Override
@@ -73,4 +81,18 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+    public void sendUserOnClick() { //This method edits the text in the next activity
+        createProfile2 = findViewById(R.id.create_profile);
+
+        createProfile2.setOnClickListener(new View.OnClickListener() { //Event listener for unlock button
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, CalendarActivity.class);
+                startActivity(intent);
+            }
+        });
+
+    }
 }
+

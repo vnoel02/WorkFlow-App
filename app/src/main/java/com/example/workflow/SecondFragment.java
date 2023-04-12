@@ -17,6 +17,8 @@ public class SecondFragment extends Fragment {
 
     private FragmentSecondBinding binding;
 
+    private Button createProfile;
+
 
 
     @Override
@@ -24,7 +26,6 @@ public class SecondFragment extends Fragment {
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-
         binding = FragmentSecondBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
@@ -33,14 +34,14 @@ public class SecondFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
         binding.createProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Change the 'previous' button to go to next activity
-
-                NavHostFragment.findNavController(SecondFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_FirstFragment);
+                Intent intent = new Intent(getActivity(), CalendarActivity.class);
+                startActivity(intent);
+                /*NavHostFragment.findNavController(SecondFragment.this)
+                        .navigate(R.id.action_SecondFragment_to_FirstFragment);*/
             }
         });
     }
@@ -50,5 +51,7 @@ public class SecondFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
+
+
 
 }
