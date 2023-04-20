@@ -41,6 +41,7 @@
         android:inputType="textPersonName"
         android:text="@string/first_name"
         android:textColor="#776B6B"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/last_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.488"
