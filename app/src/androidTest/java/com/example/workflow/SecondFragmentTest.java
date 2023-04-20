@@ -57,6 +57,11 @@ public class SecondFragmentTest {
 
     }
 
+    @Test
+    public void testSharedPref() {
+        
+    }
+
 
 
 }
