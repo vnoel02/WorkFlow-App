@@ -1,3 +1,14 @@
+# First Iteration Report
+
+Both user stories for the first iteration were implemented however were modified due to the size of the userstories. Some scenarios are large enough to become it's own userstory for the next iteration. The profile page mentioned a userstory has been implemented, however, the scenario where multiple profiles could be created is left for a future iteration.
+
+
+
+
+
+
+
+
 # Project Proposal
 
 ## Group: 9 Inc
