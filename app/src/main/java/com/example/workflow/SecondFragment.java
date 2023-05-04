@@ -1,4 +1,4 @@
-package com.example.workflow;
+/*package com.example.workflow;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -59,7 +59,7 @@ public class SecondFragment extends Fragment {
 
                 String secondName = editText2.getText().toString();
                 editor.putString("SecondName", secondName);
-                editor.apply();*/
+                editor.apply();
 
                 Intent intent = new Intent(getActivity(), CalendarActivity.class);
                 Intent intent2 = new Intent(getActivity(), ProfileViewActivity.class);
@@ -83,11 +83,12 @@ public class SecondFragment extends Fragment {
 
                 //First iteration: Intend on sending the profile info onto another activity within the calendar activity page
                 startActivity(intent);
-                //startActivity(intent2);
+                startActivity(intent2);
+
 
 
                 /*NavHostFragment.findNavController(SecondFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_FirstFragment);*/
+                        .navigate(R.id.action_SecondFragment_to_FirstFragment);
             }
         });
     }
@@ -101,3 +102,4 @@ public class SecondFragment extends Fragment {
 
 
 }
+        */

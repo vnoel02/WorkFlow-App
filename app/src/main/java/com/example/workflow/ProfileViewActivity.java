@@ -2,7 +2,9 @@ package com.example.workflow;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class ProfileViewActivity extends AppCompatActivity {
@@ -41,4 +43,12 @@ public class ProfileViewActivity extends AppCompatActivity {
 
         //editor.apply();
     }
+
+    public void returnOnClick(View view) {
+        Intent intent = new Intent(ProfileViewActivity.this, CalendarActivity.class);
+        startActivity(intent);
+
+    }
+
+
 }

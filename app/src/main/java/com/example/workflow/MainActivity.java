@@ -1,4 +1,4 @@
-package com.example.workflow;
+/*package com.example.workflow;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //sendUserOnClick();*/
+        //sendUserOnClick();
     }
 
     @Override
@@ -95,4 +95,4 @@ public class MainActivity extends AppCompatActivity {
 
     }
 }
-
+*/
