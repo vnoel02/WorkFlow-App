@@ -8,6 +8,8 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.workflow.R;
+
 public class CreateProfile extends AppCompatActivity {
 
     @Override

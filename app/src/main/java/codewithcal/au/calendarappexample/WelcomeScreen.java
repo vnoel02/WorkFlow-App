@@ -7,6 +7,8 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.workflow.R;
+
 public class WelcomeScreen extends AppCompatActivity {
 
     @Override
