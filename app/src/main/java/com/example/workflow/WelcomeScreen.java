@@ -21,7 +21,7 @@ public class WelcomeScreen extends AppCompatActivity {
 
 
         //initialize variable
-        SwitchMaterial switchBtn = findViewById(R.id.switchBtn);
+        /*SwitchMaterial switchBtn = findViewById(R.id.switchBtn);
         Objects.requireNonNull(getSupportActionBar()).setTitle("LIGHT-NIGHT MODE SWITCH");
 
         //switch theme mode per user wishes
@@ -38,7 +38,7 @@ public class WelcomeScreen extends AppCompatActivity {
 
             }
 
-        });
+        });*/
 
         setContentView(R.layout.activity_welcome_screen);
         sendUserOnClick();
