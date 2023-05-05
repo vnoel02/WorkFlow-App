@@ -1,11 +1,11 @@
 package com.example.workflow;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class ProfileViewActivity extends AppCompatActivity {
 
@@ -16,11 +16,8 @@ public class ProfileViewActivity extends AppCompatActivity {
 
         /*SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
-
         TextView tv = findViewById(R.id.receive_first);
         TextView tv2 = findViewById(R.id.receive_second);
-
-
         String firstName = sharedPref.getString("FirstName", "");
         String secondName = sharedPref.getString("SecondName","");
         tv.setText(firstName);
@@ -45,7 +42,7 @@ public class ProfileViewActivity extends AppCompatActivity {
     }
 
     public void returnOnClick(View view) {
-        Intent intent = new Intent(ProfileViewActivity.this, CalendarActivity.class);
+        Intent intent = new Intent(ProfileViewActivity.this, MainActivity.class);
         startActivity(intent);
 
     }
