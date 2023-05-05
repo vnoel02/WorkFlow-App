@@ -17,6 +17,11 @@ import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
+import androidx.appcompat.app.AppCompatDelegate;
+import android.widget.CompoundButton;
+import com.google.android.material.switchmaterial.SwitchMaterial;
+import java.util.Objects;
+
 public class MainActivity extends AppCompatActivity implements CalendarAdapter.OnItemListener
 {
     private TextView monthYearText;
@@ -28,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        initVar();
         initWidgets();
         selectedDate = LocalDate.now();
         setMonthView();
@@ -104,6 +110,45 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
     public void imageButtonOnClick(View v) {
         Intent intent = new Intent(MainActivity.this, ProfileViewActivity.class);
         startActivity(intent);
+    }
+
+    public void initVar() {
+        SwitchMaterial switchBtn = findViewById(R.id.switchBtn);
+        Objects.requireNonNull(getSupportActionBar()).setTitle("LIGHT-NIGHT MODE SWITCH");
+
+        //switch theme mode per user wishes
+        switchBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                    buttonView.setText("Night Mode");
+                } else {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                    buttonView.setText("Light Mode");
+                }
+
+            }
+
+        });
+        boolean isNightModeOn = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES;
+        switchBtn.setChecked(isNightModeOn);
+        if (isNightModeOn) {
+            switchBtn.setText("Night Mode");
+        } else {
+            switchBtn.setText("light Mode");
+        }
+
+    }
+
+    @Override
+    public void recreate(){
+        finish();
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+
+        startActivity(getIntent());
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+
     }
 
 }
