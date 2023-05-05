@@ -34,6 +34,7 @@
             android:onClick="imageButtonOnClick"
             />
 
+
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -44,6 +45,7 @@
             android:textColor="#2196F3"
             android:textSize="20sp"
             android:textStyle="bold" />
+
 
         <TextView
             android:id="@+id/monthYearTV"
@@ -59,8 +61,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+
             android:text="Forward"
             android:textColor="#2196F3"
+
             android:background="@null"
             android:textStyle="bold"
             android:onClick="nextMonthAction"
@@ -78,7 +82,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="SUN"
+
             android:textColor="#504D4D"
+
             android:textAlignment="center"
             android:textSize="16sp"/>
 
@@ -87,16 +93,20 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="MON"
+
             android:textAlignment="center"
             android:textColor="#504D4D"
             android:textSize="16sp" />
+
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="TUE"
+
             android:textColor="#504D4D"
+
             android:textAlignment="center"
             android:textSize="16sp"/>
 
@@ -105,7 +115,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="WED"
+
             android:textColor="#504D4D"
+
             android:textAlignment="center"
             android:textSize="16sp"/>
 
@@ -114,7 +126,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="THUR"
+
             android:textColor="#504D4D"
+
             android:textAlignment="center"
             android:textSize="16sp"/>
 
@@ -123,7 +137,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="FRI"
+
             android:textColor="#504D4D"
+
             android:textAlignment="center"
             android:textSize="16sp"/>
 
@@ -132,7 +148,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="SAT"
+
             android:textColor="#504D4D"
+
             android:textAlignment="center"
             android:textSize="16sp"/>
 
@@ -145,4 +163,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
+
 </LinearLayout>
+
