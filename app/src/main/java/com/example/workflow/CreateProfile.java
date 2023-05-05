@@ -38,8 +38,8 @@ public class CreateProfile extends AppCompatActivity {
                 editor.putString("SecondName", secondName);
                 editor.apply();*/
 
-                Intent intent = new Intent(CreateProfile.this, MainActivity.class);
-                Intent intent2 = new Intent(CreateProfile.this, ProfileViewActivity.class);
+                Intent intent = new Intent(com.example.workflow.CreateProfile.this, MainActivity.class);
+                Intent intent2 = new Intent(com.example.workflow.CreateProfile.this, ProfileViewActivity.class);
                 EditText et = findViewById(R.id.first_name);
                 EditText et2 = findViewById(R.id.last_name);
                 EditText et3 = findViewById(R.id.user_name);

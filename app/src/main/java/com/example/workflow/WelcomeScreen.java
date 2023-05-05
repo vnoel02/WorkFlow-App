@@ -4,24 +4,45 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CompoundButton;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.workflow.R;
+
+import android.widget.CompoundButton;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import com.google.android.material.switchmaterial.SwitchMaterial;
 
 import java.util.Objects;
 
+import codewithcal.au.calendarappexample.CreateProfile;
+
 public class WelcomeScreen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_welcome_screen);
+        //initVar();
+        sendUserOnClick();
 
 
-        //initialize variable
-        /*SwitchMaterial switchBtn = findViewById(R.id.switchBtn);
+    }
+
+    public void sendUserOnClick() {
+        Button createProfile = findViewById(R.id.create_profile_button);
+
+        createProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(com.example.workflow.WelcomeScreen.this, com.example.workflow.CreateProfile.class);
+                startActivity(intent);
+            }
+        });
+    }
+    public void initVar() {
+        SwitchMaterial switchBtn = findViewById(R.id.switchBtn);
         Objects.requireNonNull(getSupportActionBar()).setTitle("LIGHT-NIGHT MODE SWITCH");
 
         //switch theme mode per user wishes
@@ -38,23 +59,6 @@ public class WelcomeScreen extends AppCompatActivity {
 
             }
 
-        });*/
-
-        setContentView(R.layout.activity_welcome_screen);
-        sendUserOnClick();
-
-
-    }
-
-    public void sendUserOnClick() {
-        Button createProfile = findViewById(R.id.create_profile_button);
-
-        createProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(WelcomeScreen.this, CreateProfile.class);
-                startActivity(intent);
-            }
         });
     }
 }

@@ -19,7 +19,7 @@ public class WelcomeScreenUnitTest {
         WelcomeScreen welcomeScreen = new WelcomeScreen();
 
         Intent intent = new Intent(welcomeScreen, ProfileViewActivity.class);
-        intent.putExtra("key","value");
+        //intent.putExtra("key","value");
         welcomeScreen.startActivity(intent);
 
         onView(withId(R.layout.activity_create_profile)).check(matches(isDisplayed()));

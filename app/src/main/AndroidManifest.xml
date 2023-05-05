@@ -10,15 +10,15 @@
 
         android:theme="@style/Theme.CalendarAppExample">
     <activity
-        android:name=".CreateProfile"
+        android:name="com.example.workflow.CreateProfile"
         android:exported="false" />
     <activity
-        android:name=".MainActivity"
+        android:name="com.example.workflow.MainActivity"
         android:exported="false" />
     <activity
-        android:name=".ProfileViewActivity"
+        android:name="com.example.workflow.ProfileViewActivity"
         android:exported="false" />
-    <activity android:name=".WelcomeScreen"
+    <activity android:name="com.example.workflow.WelcomeScreen"
         android:exported="true">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
