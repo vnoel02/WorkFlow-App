@@ -1,13 +1,22 @@
+# Second Iteration Report 
+Two new userstories were implemented. One userstory involves the connection between two parts of the app, profile creation and the organizational calendar. The other was a simple notification/toast that was provided from selecting a specific date. The main issues that arrived from implementing the userstories was combining the profile activity and the calendar activity as the calendar activity required a different package and methods to implement correctly compared to the straightforward profile creator. 
+
+#### Velocity Points:
+ Userstory #3: 1 point
+ 
+ Userstory #10: 3 points
+
+Totoal: 4 points
+
+
 # First Iteration Report
 
 Both user stories for the first iteration were implemented however were modified due to the size of the userstories. Some scenarios are large enough to become it's own userstory for the next iteration. The profile page mentioned a userstory has been implemented, however, the scenario where multiple profiles could be created is left for a future iteration.
 
-<br>
-Velocity Points:
+#### Velocity Points:
+ Userstory #8: 1 point
 
-Userstory #8: 1 point
-
-UserStory #5: 1 point
+ UserStory #5: 1 point
 
 Total: 2 points
 
