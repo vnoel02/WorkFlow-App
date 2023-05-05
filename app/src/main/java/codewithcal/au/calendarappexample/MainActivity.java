@@ -1,21 +1,25 @@
 package codewithcal.au.calendarappexample;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.workflow.R;
+import com.google.android.material.switchmaterial.SwitchMaterial;
 
 import java.time.LocalDate;
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity implements CalendarAdapter.OnItemListener
 {
@@ -23,11 +27,41 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
     private RecyclerView calendarRecyclerView;
     private LocalDate selectedDate;
 
+
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //initialize variable
+        SwitchMaterial switchBtn = findViewById(R.id.switchBtn);
+        Objects.requireNonNull(getSupportActionBar()).setTitle("LIGHT-NIGHT MODE SWITCH");
+
+        //switch theme mode per user wishes
+        switchBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                    buttonView.setText("Night Mode");
+                } else {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                    buttonView.setText("Light Mode");
+                }
+
+            }
+
+        });
+
+        //set the pre theme mode when app starts?
+        boolean isNightModeOn = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES;
+        switchBtn.setChecked(isNightModeOn);
+        if (isNightModeOn) {
+            switchBtn.setText("Night Mode");
+        } else {
+            switchBtn.setText("light Mode");
+                }
+
         initWidgets();
         selectedDate = LocalDate.now();
         setMonthView();
@@ -104,6 +138,16 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
     public void imageButtonOnClick(View v) {
         Intent intent = new Intent(MainActivity.this, ProfileViewActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    public void recreate(){
+        finish();
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+
+        startActivity(getIntent());
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+
     }
 
 }
