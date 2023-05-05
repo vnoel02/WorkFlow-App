@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initVar();
+        //initVar();
         initWidgets();
         selectedDate = LocalDate.now();
         setMonthView();
