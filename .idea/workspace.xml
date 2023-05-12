@@ -11,7 +11,17 @@
   <component name="ChangeListManager">
     <list default="true" id="2afc8288-8721-4f4d-b3f7-b5430014643d" name="Changes" comment="UI/Junit tests for user story #10 (Green)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/codewithcal/au/calendarappexample/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/codewithcal/au/calendarappexample/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/codewithcal/au/calendarappexample/ExampleInstrumentedTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/codewithcal/au/calendarappexample/WelcomeScreenTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/codewithcal/au/calendarappexample/CalendarAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/codewithcal/au/calendarappexample/CalendarViewHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/codewithcal/au/calendarappexample/CreateProfile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/codewithcal/au/calendarappexample/MainActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/codewithcal/au/calendarappexample/ProfileViewActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/codewithcal/au/calendarappexample/WelcomeScreen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/codewithcal/au/calendarappexample/ExampleUnitTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/codewithcal/au/calendarappexample/MainActivityTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/codewithcal/au/calendarappexample/WelcomeScreenUnitTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +80,9 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
     "last_opened_file_path": "C:/Users/rodle/AndroidStudioProjects/Calendar/app/src/main/res/layout",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   }
 }]]></component>
