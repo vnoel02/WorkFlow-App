@@ -23,19 +23,19 @@ public class ProfileViewActivity extends AppCompatActivity {
         tv.setText(firstName);
         tv2.setText(secondName);*/
         String firstName = getIntent().getStringExtra("FirstName");
-        TextView tv = findViewById(R.id.text_firstname);
+        final TextView tv = findViewById(R.id.text_firstname);
         tv.setText(firstName);
 
         String lastName = getIntent().getStringExtra("LastName");
-        TextView tv2 = findViewById(R.id.text_lastName);
+        final TextView tv2 = findViewById(R.id.text_lastName);
         tv2.setText(lastName);
 
         String username = getIntent().getStringExtra("Username");
-        TextView tv3 = findViewById(R.id.profile_username);
+        final TextView tv3 = findViewById(R.id.profile_username);
         tv3.setText(username);
 
         String email = getIntent().getStringExtra("Email");
-        TextView tv4 = findViewById(R.id.profile_email);
+        final TextView tv4 = findViewById(R.id.profile_email);
         tv4.setText(email);
 
         //editor.apply();

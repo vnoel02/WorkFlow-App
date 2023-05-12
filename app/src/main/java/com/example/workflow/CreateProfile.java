@@ -38,7 +38,7 @@ public class CreateProfile extends AppCompatActivity {
                 editor.putString("SecondName", secondName);
                 editor.apply();*/
 
-                Intent intent = new Intent(com.example.workflow.CreateProfile.this, MainActivity.class);
+                //Intent intent = new Intent(com.example.workflow.CreateProfile.this, MainActivity.class);
                 Intent intent2 = new Intent(com.example.workflow.CreateProfile.this, ProfileViewActivity.class);
                 EditText et = findViewById(R.id.first_name);
                 EditText et2 = findViewById(R.id.last_name);
@@ -58,10 +58,16 @@ public class CreateProfile extends AppCompatActivity {
                 intent2.putExtra("Email", email);
 
 
-                //First iteration: Intend on sending the profile info onto another activity within the calendar activity page
-                startActivity(intent);
+                Global s = new Global();
+                s.createdProfile = true;
+                //startActivity(intent);
                 startActivity(intent2);
+
             }
         });
+    }
+
+    public boolean isVisible() {
+        return true;
     }
 }
