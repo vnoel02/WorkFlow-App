@@ -22,11 +22,34 @@ public class CreateProfileTest {
     public ActivityScenarioRule<CreateProfile> profile = new ActivityScenarioRule<CreateProfile>(CreateProfile.class);
 
     @Test
-    public void testInput() {
-        onView(withId(R.id.first_name)).perform(typeText(""),closeSoftKeyboard());
-        onView(withId(R.id.create_profile_button)).perform(click());
+    public void testFirstName() {
+        onView(withId(R.id.first_name)).perform(typeText("Victor"),closeSoftKeyboard());
+        onView(withId(R.id.create_profile)).perform(click());
 
-        onView(withId(R.id.text_firstname)).check(matches(withText("First Name")));
+        onView(withId(R.id.text_firstname)).check(matches(withText("Victor")));
     }
+    @Test
+    public void testLastName() {
+        onView(withId(R.id.last_name)).perform(typeText("Noel"),closeSoftKeyboard());
+        onView(withId(R.id.create_profile)).perform(click());
+
+        onView(withId(R.id.text_firstname)).check(matches(withText("Noel")));
+    }
+    @Test
+    public void testUserName() {
+        onView(withId(R.id.user_name)).perform(typeText("vnoel02"),closeSoftKeyboard());
+        onView(withId(R.id.create_profile)).perform(click());
+
+        onView(withId(R.id.text_firstname)).check(matches(withText("vnoel02")));
+    }
+    @Test
+    public void testEmail() {
+        onView(withId(R.id.email)).perform(typeText("vnoel890@gmail.com"),closeSoftKeyboard());
+        onView(withId(R.id.create_profile)).perform(click());
+
+        onView(withId(R.id.text_firstname)).check(matches(withText("vnoel890@gmail.com")));
+    }
+
+
 
 }

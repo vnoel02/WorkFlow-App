@@ -9,15 +9,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2afc8288-8721-4f4d-b3f7-b5430014643d" name="Changes" comment="Changed some of the UI">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_concurrent_concurrent_futures_1_1_0.xml" beforeDir="false" />
+    <list default="true" id="2afc8288-8721-4f4d-b3f7-b5430014643d" name="Changes" comment="Fixed some Espresso tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/example/workflow/CreateProfileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/example/workflow/CreateProfileTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/workflow/CreateProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/workflow/CreateProfile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/workflow/ProfileViewActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/workflow/ProfileViewActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_create_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_create_profile.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/example/workflow/WelcomeScreenTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +100,7 @@
       <recent name="codewithcal.au.calendarappexample" />
     </key>
   </component>
-  <component name="RunManager" selected="Android App.app">
+  <component name="RunManager" selected="Android Instrumented Tests.CreateProfileTest">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="WorkFlow.app.main" />
       <option name="DEPLOY" value="true" />
@@ -370,9 +366,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Android Instrumented Tests.CreateProfileTest" />
         <item itemvalue="Android Instrumented Tests.WelcomeScreenTest" />
         <item itemvalue="Android Instrumented Tests.testIntent()" />
-        <item itemvalue="Android Instrumented Tests.CreateProfileTest" />
         <item itemvalue="Gradle.CreateProfileTest" />
         <item itemvalue="Gradle.WelcomeScreenTest" />
       </list>
@@ -436,7 +432,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683907891018</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Fixed some Espresso tests">
+      <created>1683925750757</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1683925750757</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -489,7 +492,8 @@
     <MESSAGE value="UI/Junit tests for user story #10 (Green)" />
     <MESSAGE value="Deleted unnecessary package" />
     <MESSAGE value="Changed some of the UI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed some of the UI" />
+    <MESSAGE value="Fixed some Espresso tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed some Espresso tests" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/cisc3171proj_9_inc$cisc3171proj_9_inc_app__testDebugUnitTest_.ic" NAME="cisc3171proj-9-inc:app [testDebugUnitTest] Coverage Results" MODIFIED="1683269788910" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

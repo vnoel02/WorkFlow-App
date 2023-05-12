@@ -3,7 +3,9 @@ package com.example.workflow;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,43 +23,45 @@ public class CreateProfile extends AppCompatActivity {
     public void saveProfileOnClick() {
         Button profile = findViewById(R.id.create_profile);
 
+        EditText et = findViewById(R.id.first_name);
+        EditText et2 = findViewById(R.id.last_name);
+        EditText et3 = findViewById(R.id.user_name);
+        EditText et4 = findViewById(R.id.email);
+
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                /*SharedPreferences sharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
+                String firstName = et.getText().toString();
+                String lastName = et2.getText().toString();
+                String username = et3.getText().toString();
+                String email = et4.getText().toString();
 
-                EditText editText = getActivity().findViewById(R.id.first_name);
-                EditText editText2 = getActivity().findViewById(R.id.last_name);
+                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(CreateProfile.this);
+                SharedPreferences.Editor editor = prefs.edit();
 
-                String firstName = editText.getText().toString();
-                editor.putString("FirstName", firstName);
-
-                String secondName = editText2.getText().toString();
-                editor.putString("SecondName", secondName);
-                editor.apply();*/
+                editor.putString("firstName", firstName);
+                editor.putString("lastName", lastName);
+                editor.putString("username", username);
+                editor.putString("email", email);
 
                 //Intent intent = new Intent(com.example.workflow.CreateProfile.this, MainActivity.class);
                 Intent intent2 = new Intent(com.example.workflow.CreateProfile.this, ProfileViewActivity.class);
-                EditText et = findViewById(R.id.first_name);
-                EditText et2 = findViewById(R.id.last_name);
-                EditText et3 = findViewById(R.id.user_name);
-                EditText et4 = findViewById(R.id.email);
-
-                String firstName = et.getText().toString();
-                intent2.putExtra("FirstName", firstName);
-
-                String lastName = et2.getText().toString();
-                intent2.putExtra("LastName",lastName);
-
-                String username = et3.getText().toString();
-                intent2.putExtra("Username", username);
-
-                String email = et4.getText().toString();
-                intent2.putExtra("Email", email);
 
 
+//                String firstName = et.getText().toString();
+//                intent2.putExtra("FirstName", firstName);
+//
+//                String lastName = et2.getText().toString();
+//                intent2.putExtra("LastName",lastName);
+//
+//                String username = et3.getText().toString();
+//                intent2.putExtra("Username", username);
+//
+//                String email = et4.getText().toString();
+//                intent2.putExtra("Email", email);
+
+                editor.apply();
                 Global s = new Global();
                 s.createdProfile = true;
                 //startActivity(intent);
@@ -67,7 +71,5 @@ public class CreateProfile extends AppCompatActivity {
         });
     }
 
-    public boolean isVisible() {
-        return true;
-    }
+
 }

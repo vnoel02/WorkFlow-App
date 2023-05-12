@@ -1,7 +1,10 @@
 package com.example.workflow;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.TextView;
 
@@ -22,21 +25,34 @@ public class ProfileViewActivity extends AppCompatActivity {
         String secondName = sharedPref.getString("SecondName","");
         tv.setText(firstName);
         tv2.setText(secondName);*/
-        String firstName = getIntent().getStringExtra("FirstName");
-        final TextView tv = findViewById(R.id.text_firstname);
-        tv.setText(firstName);
 
-        String lastName = getIntent().getStringExtra("LastName");
-        final TextView tv2 = findViewById(R.id.text_lastName);
-        tv2.setText(lastName);
+        final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        //SharedPreferences.Editor editor = prefs.edit();
 
-        String username = getIntent().getStringExtra("Username");
-        final TextView tv3 = findViewById(R.id.profile_username);
-        tv3.setText(username);
+//        String firstName = prefs.getString("firstName", "");
+//        TextView tv = findViewById(R.id.text_firstname);
+//        tv.setText(firstName);
+//
+//        String lastName = prefs.getString("lastName", "");
+//        TextView tv2 = findViewById(R.id.text_lastName);
+//        tv2.setText(lastName);
 
-        String email = getIntent().getStringExtra("Email");
-        final TextView tv4 = findViewById(R.id.profile_email);
-        tv4.setText(email);
+
+//        String firstName = getIntent().getStringExtra("FirstName");
+//        final TextView tv = findViewById(R.id.text_firstname);
+//        tv.setText(firstName);
+//
+//        String lastName = getIntent().getStringExtra("LastName");
+//        final TextView tv2 = findViewById(R.id.text_lastName);
+//        tv2.setText(lastName);
+//
+//        String username = getIntent().getStringExtra("Username");
+//        final TextView tv3 = findViewById(R.id.profile_username);
+//        tv3.setText(username);
+//
+//        String email = getIntent().getStringExtra("Email");
+//        final TextView tv4 = findViewById(R.id.profile_email);
+//        tv4.setText(email);
 
         //editor.apply();
     }
