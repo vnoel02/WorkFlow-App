@@ -3,6 +3,7 @@ package com.example.workflow;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,7 +17,7 @@ import com.google.android.material.switchmaterial.SwitchMaterial;
 
 import java.util.Objects;
 
-import codewithcal.au.calendarappexample.CreateProfile;
+
 
 public class WelcomeScreen extends AppCompatActivity {
 
@@ -24,6 +25,10 @@ public class WelcomeScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_screen);
+        WindowManager.LayoutParams layoutParams = getWindow().getAttributes();
+        layoutParams.dimAmount = 0.75f;
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+        getWindow().setAttributes(layoutParams);
         //initVar();
         sendUserOnClick();
 
