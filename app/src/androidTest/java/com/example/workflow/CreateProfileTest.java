@@ -33,21 +33,21 @@ public class CreateProfileTest {
         onView(withId(R.id.last_name)).perform(typeText("Noel"),closeSoftKeyboard());
         onView(withId(R.id.create_profile)).perform(click());
 
-        onView(withId(R.id.text_firstname)).check(matches(withText("Noel")));
+        onView(withId(R.id.text_lastName)).check(matches(withText("Noel")));
     }
     @Test
     public void testUserName() {
         onView(withId(R.id.user_name)).perform(typeText("vnoel02"),closeSoftKeyboard());
         onView(withId(R.id.create_profile)).perform(click());
 
-        onView(withId(R.id.text_firstname)).check(matches(withText("vnoel02")));
+        onView(withId(R.id.profile_username)).check(matches(withText("vnoel02")));
     }
     @Test
     public void testEmail() {
         onView(withId(R.id.email)).perform(typeText("vnoel890@gmail.com"),closeSoftKeyboard());
         onView(withId(R.id.create_profile)).perform(click());
 
-        onView(withId(R.id.text_firstname)).check(matches(withText("vnoel890@gmail.com")));
+        onView(withId(R.id.profile_email)).check(matches(withText("vnoel890@gmail.com")));
     }
 
 

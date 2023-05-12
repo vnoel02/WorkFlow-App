@@ -29,13 +29,21 @@ public class ProfileViewActivity extends AppCompatActivity {
         final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         //SharedPreferences.Editor editor = prefs.edit();
 
-//        String firstName = prefs.getString("firstName", "");
-//        TextView tv = findViewById(R.id.text_firstname);
-//        tv.setText(firstName);
-//
-//        String lastName = prefs.getString("lastName", "");
-//        TextView tv2 = findViewById(R.id.text_lastName);
-//        tv2.setText(lastName);
+        String firstName = prefs.getString("firstName", "");
+        TextView tv = findViewById(R.id.text_firstname);
+        tv.setText(firstName);
+
+        String lastName = prefs.getString("lastName", "");
+        TextView tv2 = findViewById(R.id.text_lastName);
+        tv2.setText(lastName);
+
+        String username = prefs.getString("username", "");
+        TextView tv3 = findViewById(R.id.profile_username);
+        tv3.setText(username);
+
+        String email = prefs.getString("email", "");
+        TextView tv4 = findViewById(R.id.profile_email);
+        tv4.setText(email);
 
 
 //        String firstName = getIntent().getStringExtra("FirstName");
