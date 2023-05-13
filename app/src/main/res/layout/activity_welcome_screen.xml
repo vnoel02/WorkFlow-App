@@ -7,6 +7,19 @@
     tools:context=".WelcomeScreen"
     android:background="@drawable/grey_nyc_unsplash">
 
+    <RelativeLayout
+        android:id="@+id/childLayout"
+        android:layout_width="313dp"
+        android:layout_height="617dp"
+        android:background="#99000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.359">
+
+    </RelativeLayout>
+
 
     <TextView
         android:id="@+id/textview_first"
@@ -17,7 +30,7 @@
         android:shadowDx="1.5"
         android:shadowDy="1.3"
         android:shadowRadius="1.6"
-        android:text="Welcome to WorkFlow!"
+        android:text="@string/welcome_to_workflow"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="#F2F4F4"
@@ -51,7 +64,7 @@
         android:layout_height="45dp"
         android:layout_marginBottom="144dp"
         android:fontFamily="@font/muli_bold"
-        android:text="Create A Profile"
+        android:text="@string/create_a_profile"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -68,7 +81,7 @@
         android:shadowDx="2.0"
         android:shadowDy="1.3"
         android:shadowRadius="1.6"
-        android:text="An app that'll help curb your procrastination!!!"
+        android:text="@string/an_app_that_ll_help_curb_your_procrastination"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="16sp"

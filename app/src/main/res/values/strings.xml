@@ -16,4 +16,7 @@
     <string name="user_name">User Name</string>
     <string name="create_profile">Create Profile</string>
     <string name="title_activity_calendar">CalendarActivity</string>
+    <string name="welcome_to_workflow">Welcome to WorkFlow!</string>
+    <string name="create_a_profile">Create A Profile</string>
+    <string name="an_app_that_ll_help_curb_your_procrastination">An app that\'ll help curb your procrastination!!!</string>
 </resources>

@@ -9,6 +9,19 @@
     android:id="@+id/create_profile_layout">
 
 
+    <RelativeLayout
+        android:id="@+id/childLayout"
+        android:layout_width="313dp"
+        android:layout_height="617dp"
+        android:background="#99000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.359">
+
+    </RelativeLayout>
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/miniProfileButton"
         android:layout_width="100dp"
@@ -38,7 +51,7 @@
     <EditText
         android:id="@+id/first_name"
         android:layout_width="276dp"
-        android:layout_height="44dp"
+        android:layout_height="48dp"
         android:layout_marginBottom="24dp"
         android:ems="10"
         android:inputType="textPersonName"
@@ -54,7 +67,7 @@
     <EditText
         android:id="@+id/last_name"
         android:layout_width="277dp"
-        android:layout_height="43dp"
+        android:layout_height="48dp"
         android:layout_marginBottom="24dp"
         android:ems="10"
         android:inputType="textPersonName"
@@ -68,7 +81,7 @@
     <EditText
         android:id="@+id/email"
         android:layout_width="280dp"
-        android:layout_height="43dp"
+        android:layout_height="48dp"
         android:layout_marginBottom="28dp"
         android:ems="10"
         android:inputType="textEmailAddress"
@@ -83,7 +96,7 @@
     <EditText
         android:id="@+id/user_name"
         android:layout_width="279dp"
-        android:layout_height="45dp"
+        android:layout_height="48dp"
         android:layout_marginBottom="20dp"
         android:ems="10"
         android:inputType="textPersonName"
@@ -105,7 +118,7 @@
         android:shadowRadius="1.6"
         android:text="@string/create_profile"
         android:textAlignment="center"
-        android:textColor="#F8F7F7"
+        android:textColor="#FFFFFF"
 
         android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"

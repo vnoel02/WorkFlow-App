@@ -9,12 +9,15 @@
     tools:context=".MainActivity"
     android:background="@drawable/grey_nyc_unsplash">
 
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginBottom="20dp"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="20dp"
+        android:background="#99000000">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/miniProfileButton"
@@ -96,7 +99,7 @@
             android:text="SUN"
 
             android:textColor="@color/white"
-
+            android:background="#99000000"
             android:textAlignment="center"
             android:textSize="16sp"
             android:shadowColor="#000000"
@@ -109,7 +112,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="MON"
-
+            android:background="#99000000"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="16sp"
@@ -124,7 +127,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="TUES"
-
+            android:background="#99000000"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="16sp"
@@ -138,7 +141,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="WED"
-
+            android:background="#99000000"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="16sp"
@@ -152,7 +155,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="THU"
-
+            android:background="#99000000"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="16sp"
@@ -166,7 +169,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="FRI"
-
+            android:background="#99000000"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="16sp"
@@ -180,7 +183,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="SAT"
-
+            android:background="#99000000"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="16sp"
@@ -196,8 +199,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/calendarRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+        android:layout_height="499dp"
+        android:background="#99000000" />
 
 
 </LinearLayout>
