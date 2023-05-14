@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:name=".Global"
 
-        android:theme="@style/Theme.CalendarAppExample">
+        android:theme="@style/Theme.WorkFlow">
     <activity
         android:name="com.example.workflow.CreateProfile"
         android:exported="false" />
