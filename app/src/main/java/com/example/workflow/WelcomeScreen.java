@@ -37,7 +37,7 @@ public class WelcomeScreen extends AppCompatActivity {
         sendUserOnClick();
 
 
-
+/*
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_NO)
             {
                 isNightModeOn = false;
@@ -76,6 +76,8 @@ public class WelcomeScreen extends AppCompatActivity {
 
         });
 
+
+ */
 
     }
 
