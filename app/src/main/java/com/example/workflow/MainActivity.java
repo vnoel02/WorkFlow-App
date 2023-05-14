@@ -5,8 +5,16 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.media.Image;
+import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.util.Base64;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setProfileImg();
         initWidgets();
         selectedDate = LocalDate.now();
         setMonthView();
@@ -99,9 +108,24 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
             Toast.makeText(this, message, Toast.LENGTH_LONG).show();
         }
     }
+
+    // Navigate to profile page
     public void imageButtonOnClick(View v) {
         Intent intent = new Intent(MainActivity.this, ProfileViewActivity.class);
         startActivity(intent);
+    }
+
+    // Set up profile image
+    public void setProfileImg() {
+        ImageView profile = findViewById(R.id.miniProfileButton);
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        String previouslyEncodedImage = prefs.getString("image_data", "");
+
+        if( !previouslyEncodedImage.equalsIgnoreCase("") ){
+            byte[] b = Base64.decode(previouslyEncodedImage, Base64.DEFAULT);
+            Bitmap bitmap = BitmapFactory.decodeByteArray(b, 0, b.length);
+            profile.setImageBitmap(bitmap);
+        }
     }
 
 }

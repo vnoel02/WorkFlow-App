@@ -1,16 +1,31 @@
 package com.example.workflow;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.ImageDecoder;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.provider.MediaStore;
+import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
+
+import java.io.ByteArrayOutputStream;
 
 public class CreateProfile extends AppCompatActivity {
     EditText et;
@@ -77,5 +92,58 @@ public class CreateProfile extends AppCompatActivity {
         return et.getText().toString().equals("") || et2.getText().toString().equals("")
                 || et3.getText().toString().equals("") || et4.getText().toString().equals("");
     }
+
+
+    // Used for getting image from gallery (Google Photos), converting URI to bitmap due to permission restrictions
+    // Alternate way would be to change the intent to ACTION_OPEN_DOCUMENT
+
+    ActivityResultLauncher<Intent> mStartForResult = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
+
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+
+                    if (result.getResultCode() == Activity.RESULT_OK) {
+                        Intent intent = result.getData();
+                        ImageView testim = findViewById(R.id.galleryImage);
+                        Uri selectIm = intent.getData();
+
+                        testim.setImageURI(selectIm);
+
+                        Bitmap bitmap = null;
+                        ContentResolver contentResolver = getContentResolver();
+                        try {
+                            if(Build.VERSION.SDK_INT < 28) {
+                                bitmap = MediaStore.Images.Media.getBitmap(contentResolver, selectIm);
+                            } else {
+                                ImageDecoder.Source source = ImageDecoder.createSource(contentResolver, selectIm);
+                                bitmap = ImageDecoder.decodeBitmap(source);
+                            }
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+
+                        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+                        byte[] b = baos.toByteArray();
+
+                        String encodedImage = Base64.encodeToString(b, Base64.DEFAULT);
+
+                        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(CreateProfile.this);
+                        SharedPreferences.Editor editor = prefs.edit();
+                        editor.putString("image_data",encodedImage);
+                        editor.apply();
+
+                    }
+                }
+            });
+    //Onclick method
+    public void onSetImage(View view){
+        mStartForResult.launch(new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI));
+
+    }
+
+
 
 }
