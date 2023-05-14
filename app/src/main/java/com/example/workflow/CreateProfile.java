@@ -55,6 +55,7 @@ public class CreateProfile extends AppCompatActivity {
 
                     SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(CreateProfile.this);
                     SharedPreferences.Editor editor = prefs.edit();
+                    Boolean createdProfile = prefs.edit().putBoolean("created",true).commit();
 
                     editor.putString("firstName", firstName);
                     editor.putString("lastName", lastName);

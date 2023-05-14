@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.textfield.TextInputEditText;
+
 public class ProfileViewActivity extends AppCompatActivity {
 
     @Override
@@ -17,23 +19,27 @@ public class ProfileViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_view);
 
-        final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
 
         String firstName = prefs.getString("firstName", "");
-        TextView tv = findViewById(R.id.text_firstname);
+        TextInputEditText tv = findViewById(R.id.text_firstname);
         tv.setText(firstName);
 
         String lastName = prefs.getString("lastName", "");
-        TextView tv2 = findViewById(R.id.text_lastName);
+        TextInputEditText tv2 = findViewById(R.id.text_lastName);
         tv2.setText(lastName);
 
         String username = prefs.getString("username", "");
-        TextView tv3 = findViewById(R.id.profile_username);
+        TextInputEditText tv3 = findViewById(R.id.profile_username);
         tv3.setText(username);
 
         String email = prefs.getString("email", "");
-        TextView tv4 = findViewById(R.id.profile_email);
+        TextInputEditText tv4 = findViewById(R.id.profile_email);
         tv4.setText(email);
+        tv.setEnabled(false);
+        tv2.setEnabled(false);
+        tv3.setEnabled(false);
+        tv4.setEnabled(false);
 
     }
 
@@ -41,4 +47,6 @@ public class ProfileViewActivity extends AppCompatActivity {
         Intent intent = new Intent(ProfileViewActivity.this, MainActivity.class);
         startActivity(intent);
     }
+
+
 }

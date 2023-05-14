@@ -9,10 +9,14 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2afc8288-8721-4f4d-b3f7-b5430014643d" name="Changes" comment="Added dark overlay for visibility">
+    <list default="true" id="2afc8288-8721-4f4d-b3f7-b5430014643d" name="Changes" comment="a little cleaner code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/example/workflow/CreateProfileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/example/workflow/CreateProfileTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/example/workflow/WelcomeScreenTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/example/workflow/WelcomeScreenTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/workflow/CreateProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/workflow/CreateProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/workflow/Navigation.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/workflow/Navigation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/workflow/ProfileViewActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/workflow/ProfileViewActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile_view.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +103,7 @@
       <recent name="codewithcal.au.calendarappexample" />
     </key>
   </component>
-  <component name="RunManager" selected="Android App.app">
+  <component name="RunManager" selected="Android Instrumented Tests.WelcomeScreenTest">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="WorkFlow.app.main" />
       <option name="DEPLOY" value="true" />
@@ -365,8 +369,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Android Instrumented Tests.CreateProfileTest" />
         <item itemvalue="Android Instrumented Tests.WelcomeScreenTest" />
+        <item itemvalue="Android Instrumented Tests.CreateProfileTest" />
         <item itemvalue="Android Instrumented Tests.testIntent()" />
         <item itemvalue="Gradle.CreateProfileTest" />
         <item itemvalue="Gradle.WelcomeScreenTest" />
@@ -459,7 +463,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683996030370</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="a little cleaner code">
+      <created>1684001923987</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1684001923987</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -516,7 +527,8 @@
     <MESSAGE value="Espresso test for User Story #9, profile data (RED)" />
     <MESSAGE value="Espresso test for User Story #9, profile data (Green)" />
     <MESSAGE value="Added dark overlay for visibility" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added dark overlay for visibility" />
+    <MESSAGE value="a little cleaner code" />
+    <option name="LAST_COMMIT_MESSAGE" value="a little cleaner code" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/cisc3171proj_9_inc$cisc3171proj_9_inc_app__testDebugUnitTest_.ic" NAME="cisc3171proj-9-inc:app [testDebugUnitTest] Coverage Results" MODIFIED="1683269788910" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
