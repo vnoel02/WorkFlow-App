@@ -18,6 +18,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.359">
 
+        <Button
+
+            android:id="@+id/btnDarkMode"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
+
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="240dp"
+            android:layout_marginEnd="3dp" />
     </RelativeLayout>
 
 
@@ -42,21 +52,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.333" />
 
-    <com.google.android.material.switchmaterial.SwitchMaterial
-        android:id="@+id/switchBtn"
-        android:layout_width="30dp"
-        android:layout_height="87dp"
-        android:layoutDirection="rtl"
-        android:text="Light Mode"
-        android:textAlignment="textEnd"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.913"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.975" />
+
 
     <Button
         android:id="@+id/create_profile_button"
