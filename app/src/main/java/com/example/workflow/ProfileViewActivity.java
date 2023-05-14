@@ -48,5 +48,10 @@ public class ProfileViewActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-
+    public void deleteProfile(View view) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        prefs.edit().clear().apply();
+        Intent intent = new Intent(ProfileViewActivity.this, WelcomeScreen.class);
+        startActivity(intent);
+    }
 }
