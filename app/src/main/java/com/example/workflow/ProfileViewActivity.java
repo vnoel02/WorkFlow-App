@@ -10,20 +10,26 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Base64;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import com.google.android.material.textfield.TextInputEditText;
 
 public class ProfileViewActivity extends AppCompatActivity {
+
+    boolean isNightModeOn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_view);
         setProfileImg();
+
+        Button button = findViewById(R.id.btnDarkMode);
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ProfileViewActivity.this);
 
@@ -48,7 +54,49 @@ public class ProfileViewActivity extends AppCompatActivity {
         tv3.setEnabled(false);
         tv4.setEnabled(false);
 
+
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_NO)
+        {
+            isNightModeOn = false;
+            button.setText("Dark");
+        }   else
+        {
+            isNightModeOn = true;
+            button.setText("Light");
+
+        }
+
+
+        //switch theme mode per user wishes
+        button.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                if (isNightModeOn)
+                {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                    isNightModeOn = false;
+                    button.setText("Dark");
+                }
+                else if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES)
+                {
+                    isNightModeOn = true;
+                    button.setText("Light");
+
+                } else
+                {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                }
+
+            }
+
+        });
+
+
     }
+
+
 
     //Return to calendar view
     public void returnOnClick(View view) {
