@@ -19,4 +19,7 @@
     <string name="welcome_to_workflow">Welcome to WorkFlow!</string>
     <string name="create_a_profile">Create A Profile</string>
     <string name="an_app_that_ll_help_curb_your_procrastination">An app that\'ll help curb your procrastination!!!</string>
+    <string name="to_calendar">To Calendar</string>
+    <string name="delete_profile">Delete Profile</string>
+    <string name="username">Username</string>
 </resources>
