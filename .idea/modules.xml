@@ -7,7 +7,11 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/WorkFlow.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/WorkFlow.app.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/WorkFlow.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/WorkFlow.app.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/WorkFlow.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/WorkFlow.app.unitTest.iml" />
-
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cisc3171proj-9-inc.WorkFlow.iml" filepath="$PROJECT_DIR$/.idea/modules/cisc3171proj-9-inc.WorkFlow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/cisc3171proj-9-inc.WorkFlow.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/cisc3171proj-9-inc.WorkFlow.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/cisc3171proj-9-inc.WorkFlow.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/cisc3171proj-9-inc.WorkFlow.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/cisc3171proj-9-inc.WorkFlow.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/cisc3171proj-9-inc.WorkFlow.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/cisc3171proj-9-inc.WorkFlow.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/cisc3171proj-9-inc.WorkFlow.app.unitTest.iml" />
     </modules>
   </component>
 </project>
