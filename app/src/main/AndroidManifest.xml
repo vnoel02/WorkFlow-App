@@ -10,12 +10,14 @@
         android:supportsRtl="true"
         android:name=".Global"
 
-        android:theme="@style/Theme.CalendarAppExample">
+        android:theme="@style/Theme.WorkFlow">
     <activity
         android:name="com.example.workflow.CreateProfile"
         android:exported="false" />
-
-
+        <activity
+            android:name=".DailyCalendarActivity"
+            android:exported="true" />
+        <activity android:name=".EventEditActivity" />
     <activity
         android:name="com.example.workflow.MainActivity"
         android:exported="false" />
