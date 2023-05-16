@@ -6,4 +6,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="dark_gray">#5E5454</color>
     <color name="lightGray">#EEE</color>
+    <color name="red">#E11717</color>
+    <color name="event">#404665</color>
+
 </resources>

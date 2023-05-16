@@ -41,7 +41,6 @@ class CalendarAdapter extends RecyclerView.Adapter<CalendarViewHolder>
     public void onBindViewHolder(@NonNull CalendarViewHolder holder, int position)
     {
         final LocalDate date = days.get(position);
-
         holder.dayOfMonth.setText(String.valueOf(date.getDayOfMonth()));
 
         if(date.equals(CalendarUtils.selectedDate))
@@ -63,4 +62,5 @@ class CalendarAdapter extends RecyclerView.Adapter<CalendarViewHolder>
     {
         void onItemClick(int position, LocalDate date);
     }
+
 }

@@ -108,10 +108,11 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
         }
     }
 
-    public void dailyAction(View view)
+    public void weeklyAction(View view)
     {
-        startActivity(new Intent(this, DailyCalendarActivity.class));
+        startActivity(new Intent(this, WeekViewActivity.class));
     }
+
 
 
     @Override

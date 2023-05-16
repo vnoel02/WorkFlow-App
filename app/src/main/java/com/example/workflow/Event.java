@@ -3,11 +3,13 @@ package com.example.workflow;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Event
 {
     public static ArrayList<Event> eventsList = new ArrayList<>();
 
+    public static String Event_Edit_Extra = "eventEdit";
     public static ArrayList<Event> eventsForDate(LocalDate date)
     {
         ArrayList<Event> events = new ArrayList<>();
@@ -36,18 +38,57 @@ public class Event
         return events;
     }
 
+//    public static ArrayList<Event> nonDeletedEvents(){
+//        ArrayList<Event> nonDeleted = new ArrayList<>();
+//        for(Event event: eventsList){
+//            if(event.getDeleted() == null){
+//                nonDeletedEvents().add(event);
+//            }
+//        }
+//        return nonDeleted;
+//    }
 
+    public static boolean hasEvents(LocalDate date){
+        if (eventsList.isEmpty())
+            return false;
+        return true;
+    }
+
+    private int id;
     private String name;
     private LocalDate date;
     private LocalTime time;
 
-    public Event(String name, LocalDate date, LocalTime time)
+    private Date deleted;
+
+    public Event(int id, String name, LocalDate date, LocalTime time)
     {
+        this.id = id;
         this.name = name;
         this.date = date;
         this.time = time;
     }
+//    public Event(int id, String name, LocalDate date, LocalTime time, Date deleted)
+//    {
+//        this.id = id;
+//        this.name = name;
+//        this.date = date;
+//        this.time = time;
+//        deleted = null;
+//    }
 
+    public static Event getEventForID(int passedEventID) {
+        for (Event event : eventsList){
+            if(event.getId() == passedEventID)
+                return event;
+        }
+        return null;
+    }
+
+    public int getId()
+    {
+        return id;
+    }
     public String getName()
     {
         return name;
@@ -77,4 +118,13 @@ public class Event
     {
         this.time = time;
     }
+//    public Date getDeleted()
+//    {
+//        return deleted;
+//    }
+//    public void setDeleted(Date deleted)
+//    {
+//        this.deleted = deleted;
+//    }
 }
+

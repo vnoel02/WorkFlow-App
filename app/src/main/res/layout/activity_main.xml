@@ -13,11 +13,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Daily"
+        android:text="Weekly"
         android:textColor="@color/blue"
         android:background="@null"
         android:textStyle="bold"
-        android:onClick="dailyAction"
+        android:onClick="weeklyAction"
         android:textSize="20sp"/>
 
     <LinearLayout

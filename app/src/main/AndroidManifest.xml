@@ -18,6 +18,7 @@
             android:name=".DailyCalendarActivity"
             android:exported="true" />
         <activity android:name=".EventEditActivity" />
+        <activity android:name=".WeekViewActivity" />
     <activity
         android:name="com.example.workflow.MainActivity"
         android:exported="false" />
