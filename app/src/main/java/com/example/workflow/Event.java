@@ -7,6 +7,12 @@ import java.util.Date;
 
 public class Event
 {
+    private int id;
+    private String name;
+    private LocalDate date;
+    private LocalTime time;
+
+  //  private LocalDate deleted;
     public static ArrayList<Event> eventsList = new ArrayList<>();
 
     public static String Event_Edit_Extra = "eventEdit";
@@ -54,12 +60,6 @@ public class Event
         return true;
     }
 
-    private int id;
-    private String name;
-    private LocalDate date;
-    private LocalTime time;
-
-    private Date deleted;
 
     public Event(int id, String name, LocalDate date, LocalTime time)
     {
@@ -67,15 +67,16 @@ public class Event
         this.name = name;
         this.date = date;
         this.time = time;
+       // deleted = null;
     }
-//    public Event(int id, String name, LocalDate date, LocalTime time, Date deleted)
-//    {
-//        this.id = id;
-//        this.name = name;
-//        this.date = date;
-//        this.time = time;
-//        deleted = null;
-//    }
+    public Event(int id, String name, LocalDate date, LocalTime time, LocalDate deleted)
+    {
+        this.id = id;
+        this.name = name;
+        this.date = date;
+        this.time = time;
+       // this.deleted = deleted;
+    }
 
     public static Event getEventForID(int passedEventID) {
         for (Event event : eventsList){
@@ -118,11 +119,11 @@ public class Event
     {
         this.time = time;
     }
-//    public Date getDeleted()
+//    public LocalDate getDeleted()
 //    {
 //        return deleted;
 //    }
-//    public void setDeleted(Date deleted)
+//    public void setDeleted(LocalDate deleted)
 //    {
 //        this.deleted = deleted;
 //    }

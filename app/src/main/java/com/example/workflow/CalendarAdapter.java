@@ -49,7 +49,7 @@ class CalendarAdapter extends RecyclerView.Adapter<CalendarViewHolder>
         if(date.getMonth().equals(CalendarUtils.selectedDate.getMonth()))
             holder.dayOfMonth.setTextColor(Color.BLACK);
         else
-            holder.dayOfMonth.setTextColor(Color.LTGRAY);
+            holder.dayOfMonth.setTextColor(Color.DKGRAY);
     }
 
     @Override

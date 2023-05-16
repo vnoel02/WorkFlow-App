@@ -27,8 +27,7 @@ public class SQLiteManager extends SQLiteOpenHelper
     private static final String NAME_FIELD = "name";
     private static final String DATE_FIELD = "date";
     private static final String TIME_FIELD = "time";
-
-   // private static final String DELETED_FIELD = "deleted";
+    //private static final String DELETED_FIELD = "deleted";
 
     @SuppressLint("SimpleDateFormat")
     private static final DateFormat dateFormat = new SimpleDateFormat("MM-dd-yyyy HH:mm:ss");
@@ -47,10 +46,8 @@ public class SQLiteManager extends SQLiteOpenHelper
     }
 
     @Override
-    public void onCreate(SQLiteDatabase sqLiteDatabase)
-    {
-        StringBuilder sql;
-        sql = new StringBuilder()
+    public void onCreate(SQLiteDatabase sqLiteDatabase) {
+        StringBuilder sql = new StringBuilder()
                 .append("CREATE TABLE ")
                 .append(TABLE_NAME)
                 .append("(")
@@ -63,9 +60,10 @@ public class SQLiteManager extends SQLiteOpenHelper
                 .append(DATE_FIELD)
                 .append(" TEXT, ")
                 .append(TIME_FIELD)
-                .append(" TEXT)");
+                .append(" TEXT, ")
 //                .append(DELETED_FIELD)
-//                .append(" TEXT)");
+//                .append(" TEXT ")
+                .append(")");
 
         sqLiteDatabase.execSQL(sql.toString());
     }
@@ -91,7 +89,7 @@ public class SQLiteManager extends SQLiteOpenHelper
         contentValues.put(NAME_FIELD, event.getName());
         contentValues.put(DATE_FIELD, (event.getDate().toString()));
         contentValues.put(TIME_FIELD, (event.getTime().toString()));
-      //  contentValues.put(DELETED_FIELD, getStringFromDate(event.getDeleted()));
+      //  contentValues.put(DELETED_FIELD, (event.getDeleted().toString()));
 
         sqLiteDatabase.insert(TABLE_NAME, null, contentValues);
     }
@@ -110,11 +108,11 @@ public class SQLiteManager extends SQLiteOpenHelper
                     String name = result.getString(2);
                     String date = result.getString(3);
                     String time = result.getString(4);
-                    //String stringDeleted = result.getString(5);
-                   // Date deleted = getDateFromString(stringDeleted);
+//                    String stringDeleted = result.getString(5);
+//                    LocalDate deleted =  LocalDate.parse(stringDeleted);
                     LocalDate newDate = LocalDate.parse(date);
                     LocalTime newTime = LocalTime.parse(time);
-                    Event event = new Event(id,name,newDate,newTime); // removed deleted
+                    Event event = new Event(id,name,newDate,newTime); //remove deleted
                     Event.eventsList.add(event);
                 }
             }
@@ -129,27 +127,9 @@ public class SQLiteManager extends SQLiteOpenHelper
         contentValues.put(NAME_FIELD, event.getName());
         contentValues.put(DATE_FIELD, event.getDate().toString());
         contentValues.put(TIME_FIELD, event.getTime().toString());
-        //contentValues.put(DELETED_FIELD, getStringFromDate(event.getDeleted()));
+      //  contentValues.put(DELETED_FIELD, event.getDeleted().toString());
         sqLiteDatabase.update(TABLE_NAME, contentValues, ID_FIELD + " =? ", new String[]{String.valueOf(event.getId())});
     }
 
-//    private String getStringFromDate(Date date)
-//    {
-//        if(date == null)
-//            return null;
-//        return dateFormat.format(date);
-//    }
-//
-//    private Date getDateFromString(String string)
-//    {
-//        try
-//        {
-//            return dateFormat.parse(string);
-//        }
-//        catch (ParseException | NullPointerException e)
-//        {
-//            return null;
-//        }
-//    }
 
 }

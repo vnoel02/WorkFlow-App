@@ -11,15 +11,16 @@ import android.widget.TimePicker;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.Date;
 import java.util.Locale;
 
 public class EventEditActivity extends AppCompatActivity
 {
     private EditText eventNameET;
     private TextView eventDateTV, eventTimeTV;
-    //private Button deleteButton;
+
+   // private Button deleteButton;
     private Event selectedEvent;
     private LocalTime time;
 
@@ -62,7 +63,6 @@ public class EventEditActivity extends AppCompatActivity
                 hour = selectedHour;
                 minute = selectedMinute;
                 timeButton.setText(String.format(Locale.getDefault(), "%02d:%02d",hour, minute));
-                LocalTime k  = LocalTime.parse("03:10");
             }
         };
         TimePickerDialog timePickerDialog = new TimePickerDialog(this, /*style,*/ onTimeSetListener, hour, minute, true);
@@ -98,10 +98,11 @@ public class EventEditActivity extends AppCompatActivity
             finish();
     }
 
-//    public void deleteNote(View view){
-//        selectedEvent.setDeleted(new Date());
-//        SQLiteManager sqLiteManager = SQLiteManager.instanceOfDatabase(this);
-//        sqLiteManager.updateEventInDB(selectedEvent);
-//        finish();
-//    }
+    public void deleteEventAction(View view){
+        LocalDate date = LocalDate.now();
+      //  selectedEvent.setDeleted(date);
+        SQLiteManager sqLiteManager = SQLiteManager.instanceOfDatabase(this);
+        sqLiteManager.updateEventInDB(selectedEvent);
+        finish();
+    }
 }
