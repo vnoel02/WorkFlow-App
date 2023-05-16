@@ -65,7 +65,7 @@ public class EventEditActivity extends AppCompatActivity
                 timeButton.setText(String.format(Locale.getDefault(), "%02d:%02d",hour, minute));
             }
         };
-        TimePickerDialog timePickerDialog = new TimePickerDialog(this, /*style,*/ onTimeSetListener, hour, minute, true);
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, /*style,*/ onTimeSetListener, hour, minute, false);
 
         timePickerDialog.setTitle("Select Time");
         timePickerDialog.show();
