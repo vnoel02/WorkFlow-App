@@ -60,7 +60,7 @@ public class SQLiteManager extends SQLiteOpenHelper
                 .append(DATE_FIELD)
                 .append(" TEXT, ")
                 .append(TIME_FIELD)
-                .append(" TEXT, ")
+                .append(" TEXT ")
 //                .append(DELETED_FIELD)
 //                .append(" TEXT ")
                 .append(")");

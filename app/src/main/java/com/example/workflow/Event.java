@@ -55,9 +55,7 @@ public class Event
 //    }
 
     public static boolean hasEvents(LocalDate date){
-        if (eventsList.isEmpty())
-            return false;
-        return true;
+        return !eventsList.isEmpty();
     }
 
 

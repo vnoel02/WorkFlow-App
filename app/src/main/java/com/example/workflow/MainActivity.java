@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
         initWidgets();
         CalendarUtils.selectedDate = LocalDate.now();
         setMonthView();
+        setProfileImg();
     }
 
     private void initWidgets()
