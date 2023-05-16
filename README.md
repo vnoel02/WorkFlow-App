@@ -1,3 +1,19 @@
+# Final Iteration Report
+For the final iteration, a total of five userstories were implemented. The one was about implementing a way to enter tasks into a view of calendar. It's scenarios involved basic operations of entering a task. The second userstory involved operations like editing a task. The second scenario couldn't be implemented, which discussed deleting a task. One userstory was about adding a light mode and dark mode to the profile activity. Next two user stories involved creating a profile and implementing an easy userface. 
+
+We were unable to implement userstory #4 as there's not enough time to implement.
+
+#### Velocity Points:
+Userstory #1: 1 point
+Userstory #2: 1 point
+Userstory #6: 1 point
+Userstory #7: 1 point
+Userstory #9: 2 points 
+
+
+Design Archecture: The Model View Controller (MVC) was used mainly for the profile creation activity and parts of the calendar view. It involves the usage of databases and datastorages that the user would interact with via user interface. For the calendar view, an Adapter design was used so the different views (Day view, Weekly View, Event View) would be able to share the same data and influence the UI accordingly.
+
+
 # Second Iteration Report 
 Two new userstories were implemented. One userstory involves the connection between two parts of the app, profile creation and the organizational calendar. The other was a simple notification/toast that was provided from selecting a specific date. The main issues that arrived from implementing the userstories was combining the profile activity and the calendar activity as the calendar activity required a different package and methods to implement correctly compared to the straightforward profile creator. 
 
