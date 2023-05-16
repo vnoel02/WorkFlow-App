@@ -16,7 +16,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 
-
+//Test for User Stories # 1
 public class EventTest {
     @Rule
     public ActivityScenarioRule<MainActivity> profile = new ActivityScenarioRule<MainActivity>(MainActivity.class);
@@ -27,11 +27,8 @@ public class EventTest {
         onView(withId(R.id.eventButton)).perform(click());
         onView(withId(R.id.eventNameET)).perform(typeText("Homework"),closeSoftKeyboard());
         onView(withId(R.id.eventTimeTV)).perform(click());
-
-
-
-
-
+        onView(withText("OK")).perform(click());
+        onView(withId(R.id.saveButton)).perform(click());
     }
 
 

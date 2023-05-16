@@ -21,7 +21,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-
+//Test User stories #8, 10
 public class WelcomeScreenTest {
     @Rule
     public ActivityScenarioRule<WelcomeScreen> welcome = new ActivityScenarioRule<>(WelcomeScreen.class);
