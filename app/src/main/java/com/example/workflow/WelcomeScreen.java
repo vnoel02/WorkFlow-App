@@ -2,20 +2,11 @@ package com.example.workflow;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.view.WindowManager;
+
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.workflow.R;
-
-import android.widget.CompoundButton;
-import androidx.appcompat.app.AppCompatDelegate;
-
-import com.google.android.material.switchmaterial.SwitchMaterial;
-
-import java.util.Objects;
 
 
 

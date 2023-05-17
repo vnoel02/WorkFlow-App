@@ -41,4 +41,6 @@
     <string name="select_time">Select Time</string>
     <string name="save">Save</string>
     <string name="event_name">Event Name</string>
+    <string name="light">Light</string>
+    <string name="dark">Dark</string>
 </resources>

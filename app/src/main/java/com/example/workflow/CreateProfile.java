@@ -1,7 +1,6 @@
 package com.example.workflow;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
+
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
@@ -51,36 +50,33 @@ public class CreateProfile extends AppCompatActivity {
         et3 = findViewById(R.id.user_name);
         et4 = findViewById(R.id.email);
 
-        profile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        profile.setOnClickListener(view -> {
 
-                if (missingInfo()) {
-                    Context context = getApplicationContext();
-                    CharSequence text = "Please enter missing info";
-                    int duration = Toast.LENGTH_SHORT;
+            if (missingInfo()) {
+                Context context = getApplicationContext();
+                CharSequence text = "Please enter missing info";
+                int duration = Toast.LENGTH_SHORT;
 
-                    Toast toast = Toast.makeText(context, text, duration);
-                    toast.show();
-                } else {
-                    String firstName = et.getText().toString();
-                    String lastName = et2.getText().toString();
-                    String username = et3.getText().toString();
-                    String email = et4.getText().toString();
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
+            } else {
+                String firstName = et.getText().toString();
+                String lastName = et2.getText().toString();
+                String username = et3.getText().toString();
+                String email = et4.getText().toString();
 
-                    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(CreateProfile.this);
-                    SharedPreferences.Editor editor = prefs.edit();
-                    Boolean createdProfile = prefs.edit().putBoolean("created",true).commit();
+                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(CreateProfile.this);
+                SharedPreferences.Editor editor = prefs.edit();
+                prefs.edit().putBoolean("created",true).apply();
 
-                    editor.putString("firstName", firstName);
-                    editor.putString("lastName", lastName);
-                    editor.putString("username", username);
-                    editor.putString("email", email);
+                editor.putString("firstName", firstName);
+                editor.putString("lastName", lastName);
+                editor.putString("username", username);
+                editor.putString("email", email);
 
-                    Intent intent = new Intent(com.example.workflow.CreateProfile.this, MainActivity.class);
-                    editor.apply();
-                    startActivity(intent);
-                }
+                Intent intent = new Intent(CreateProfile.this, MainActivity.class);
+                editor.apply();
+                startActivity(intent);
             }
         });
     }
@@ -97,45 +93,42 @@ public class CreateProfile extends AppCompatActivity {
 
     ActivityResultLauncher<Intent> mStartForResult = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
 
-            new ActivityResultCallback<ActivityResult>() {
-                @Override
-                public void onActivityResult(ActivityResult result) {
+            result -> {
 
-                    if (result.getResultCode() == Activity.RESULT_OK) {
-                        Intent intent = result.getData();
-                        ImageView testim = findViewById(R.id.galleryImage);
-                        assert intent != null;
-                        Uri selectIm = intent.getData();
+                if (result.getResultCode() == Activity.RESULT_OK) {
+                    Intent intent = result.getData();
+                    ImageView testim = findViewById(R.id.galleryImage);
+                    assert intent != null;
+                    Uri selectIm = intent.getData();
 
-                        testim.setImageURI(selectIm);
+                    testim.setImageURI(selectIm);
 
-                        Bitmap bitmap = null;
-                        ContentResolver contentResolver = getContentResolver();
-                        try {
-                            if(Build.VERSION.SDK_INT < 28) {
-                                bitmap = MediaStore.Images.Media.getBitmap(contentResolver, selectIm);
-                            } else {
-                                ImageDecoder.Source source = ImageDecoder.createSource(contentResolver, selectIm);
-                                bitmap = ImageDecoder.decodeBitmap(source);
-                            }
-
-                        } catch (Exception e) {
-                            e.printStackTrace();
+                    Bitmap bitmap = null;
+                    ContentResolver contentResolver = getContentResolver();
+                    try {
+                        if(Build.VERSION.SDK_INT < 28) {
+                            bitmap = MediaStore.Images.Media.getBitmap(contentResolver, selectIm);
+                        } else {
+                            ImageDecoder.Source source = ImageDecoder.createSource(contentResolver, selectIm);
+                            bitmap = ImageDecoder.decodeBitmap(source);
                         }
 
-                        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                        assert bitmap != null;
-                        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
-                        byte[] b = baos.toByteArray();
-
-                        String encodedImage = Base64.encodeToString(b, Base64.DEFAULT);
-
-                        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(CreateProfile.this);
-                        SharedPreferences.Editor editor = prefs.edit();
-                        editor.putString("image_data",encodedImage);
-                        editor.apply();
-
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
+
+                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                    assert bitmap != null;
+                    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+                    byte[] b = baos.toByteArray();
+
+                    String encodedImage = Base64.encodeToString(b, Base64.DEFAULT);
+
+                    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(CreateProfile.this);
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putString("image_data",encodedImage);
+                    editor.apply();
+
                 }
             });
     //Onclick method

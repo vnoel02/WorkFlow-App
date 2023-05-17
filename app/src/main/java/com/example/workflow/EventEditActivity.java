@@ -1,6 +1,8 @@
 package com.example.workflow;
 
+import android.annotation.SuppressLint;
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -27,6 +30,7 @@ public class EventEditActivity extends AppCompatActivity
     Button timeButton;
     int hour, minute;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -80,6 +84,7 @@ public class EventEditActivity extends AppCompatActivity
 
     public void saveEventAction(View view)
     {
+
         SQLiteManager sqLiteManager = SQLiteManager.instanceOfDatabase(this);
         String eventName = eventNameET.getText().toString();
         time = LocalTime.parse(timeButton.getText().toString());
@@ -88,8 +93,7 @@ public class EventEditActivity extends AppCompatActivity
             Event newEvent = new Event(id, eventName, CalendarUtils.selectedDate, time);
             Event.eventsList.add(newEvent);
             sqLiteManager.addEventToDatabase(newEvent);
-        }
-        else {
+        } else {
             selectedEvent.setName(eventName);
             selectedEvent.setDate(CalendarUtils.selectedDate);
             selectedEvent.setTime(time);
@@ -98,11 +102,11 @@ public class EventEditActivity extends AppCompatActivity
             finish();
     }
 
-    public void deleteEventAction(View view){
-        LocalDate date = LocalDate.now();
-      //  selectedEvent.setDeleted(date);
-        SQLiteManager sqLiteManager = SQLiteManager.instanceOfDatabase(this);
-        sqLiteManager.updateEventInDB(selectedEvent);
-        finish();
-    }
+//    public void deleteEventAction(View view){
+//        LocalDate date = LocalDate.now();
+//      //  selectedEvent.setDeleted(date);
+//        SQLiteManager sqLiteManager = SQLiteManager.instanceOfDatabase(this);
+//        sqLiteManager.updateEventInDB(selectedEvent);
+//        finish();
+//    }
 }

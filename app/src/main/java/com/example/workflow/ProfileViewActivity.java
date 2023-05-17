@@ -1,18 +1,17 @@
 package com.example.workflow;
 
-import android.content.Context;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
+
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.graphics.Color;
 
 
@@ -21,12 +20,12 @@ import androidx.appcompat.app.AppCompatDelegate;
 
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.util.Objects;
 
 
 public class ProfileViewActivity extends AppCompatActivity {
 
     boolean isNightModeOn;
-    private SharedPreferences prefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,11 +64,7 @@ public class ProfileViewActivity extends AppCompatActivity {
 
 
         // Retrieve the current night mode setting
-        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_NO) {
-            isNightModeOn = false;
-        } else {
-            isNightModeOn = true;
-        }
+        isNightModeOn = AppCompatDelegate.getDefaultNightMode() != AppCompatDelegate.MODE_NIGHT_NO;
 
         // Set the text color of the text input fields based on the current night mode setting
         if (isNightModeOn) {
@@ -89,39 +84,36 @@ public class ProfileViewActivity extends AppCompatActivity {
 
         // Set the button text based on the current night mode setting
         if (isNightModeOn) {
-            button.setText("Light");
+            button.setText(R.string.light);
         } else {
-            button.setText("Dark");
+            button.setText(R.string.dark);
         }
 
         // Set an onClickListener for the button to toggle the night mode
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (isNightModeOn) {
-                    // Turn off the night mode
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                    isNightModeOn = false;
-                    button.setText("Dark");
-                    // Set the text color of the text input fields to black
-                    tv.setTextColor(Color.BLACK);
-                    tv2.setTextColor(Color.BLACK);
-                    tv3.setTextColor(Color.BLACK);
-                    tv4.setTextColor(Color.BLACK);
-                } else {
-                    // Turn on the night mode
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                    isNightModeOn = true;
-                    button.setText("Light");
-                    // Set the text color of the text input fields to white
-                    tv.setTextColor(Color.WHITE);
-                    tv2.setTextColor(Color.WHITE);
-                    tv3.setTextColor(Color.WHITE);
-                    tv4.setTextColor(Color.WHITE);
-                }
-                // Recreate the activity to apply the new night mode setting
-                recreate();
+        button.setOnClickListener(view -> {
+            if (isNightModeOn) {
+                // Turn off the night mode
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                isNightModeOn = false;
+                button.setText(R.string.dark);
+                // Set the text color of the text input fields to black
+                tv.setTextColor(Color.BLACK);
+                tv2.setTextColor(Color.BLACK);
+                tv3.setTextColor(Color.BLACK);
+                tv4.setTextColor(Color.BLACK);
+            } else {
+                // Turn on the night mode
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                isNightModeOn = true;
+                button.setText(R.string.light);
+                // Set the text color of the text input fields to white
+                tv.setTextColor(Color.WHITE);
+                tv2.setTextColor(Color.WHITE);
+                tv3.setTextColor(Color.WHITE);
+                tv4.setTextColor(Color.WHITE);
             }
+            // Recreate the activity to apply the new night mode setting
+            recreate();
         });
 
         // Disable the text input fields
@@ -131,46 +123,34 @@ public class ProfileViewActivity extends AppCompatActivity {
         tv4.setEnabled(false);
 
         // Set the onFocusChangeListener for each text input field to save the updated text to SharedPreferences
-        tv.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (!hasFocus) {
-                    String firstName = tv.getText().toString();
-                    prefs.edit().putString("firstName", firstName).apply();
-                }
+        tv.setOnFocusChangeListener((v, hasFocus) -> {
+            if (!hasFocus) {
+                String firstName1 = Objects.requireNonNull(tv.getText()).toString();
+                prefs.edit().putString("firstName", firstName1).apply();
             }
         });
 
-        tv2.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (!hasFocus) {
-                    String lastName = tv2.getText().toString();
-                    prefs.edit().putString("lastName", lastName).apply();
-                   // tv2.setText(lastName);
-                }
+        tv2.setOnFocusChangeListener((v, hasFocus) -> {
+            if (!hasFocus) {
+                String lastName1 = Objects.requireNonNull(tv2.getText()).toString();
+                prefs.edit().putString("lastName", lastName1).apply();
+               // tv2.setText(lastName);
             }
         });
 
-        tv3.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (!hasFocus) {
-                    String username = tv3.getText().toString();
-                    prefs.edit().putString("username", username).apply();
-                   // tv3.setText(username);
-                }
+        tv3.setOnFocusChangeListener((v, hasFocus) -> {
+            if (!hasFocus) {
+                String username1 = Objects.requireNonNull(tv3.getText()).toString();
+                prefs.edit().putString("username", username1).apply();
+               // tv3.setText(username);
             }
         });
 
-        tv4.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (!hasFocus) {
-                    String email = tv4.getText().toString();
-                    prefs.edit().putString("email", email).apply();
-                   // tv3.setText(email);
-                }
+        tv4.setOnFocusChangeListener((v, hasFocus) -> {
+            if (!hasFocus) {
+                String email1 = Objects.requireNonNull(tv4.getText()).toString();
+                prefs.edit().putString("email", email1).apply();
+               // tv3.setText(email);
             }
         });
 

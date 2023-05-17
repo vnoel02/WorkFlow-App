@@ -3,11 +3,11 @@ package com.example.workflow;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.Date;
+//import java.util.Date;
 
 public class Event
 {
-    private int id;
+    final private int id;
     private String name;
     private LocalDate date;
     private LocalTime time;
@@ -54,9 +54,9 @@ public class Event
 //        return nonDeleted;
 //    }
 
-    public static boolean hasEvents(LocalDate date){
-        return !eventsList.isEmpty();
-    }
+//    public static boolean hasEvents(LocalDate date){
+//        return !eventsList.isEmpty();
+//    }
 
 
     public Event(int id, String name, LocalDate date, LocalTime time)

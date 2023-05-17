@@ -24,13 +24,13 @@ class HourEvent
         this.time = time;
     }
 
-    public ArrayList<Event> getEvents()
-    {
-        return events;
-    }
+//    public ArrayList<Event> getEvents()
+//    {
+//        return events;
+//    }
 
-    public void setEvents(ArrayList<Event> events)
-    {
-        this.events = events;
-    }
+//    public void setEvents(ArrayList<Event> events)
+//    {
+//        this.events = events;
+//    }
 }
