@@ -5,13 +5,19 @@ We were unable to implement userstory #4 as there's not enough time to implement
 
 #### Velocity Points:
 Userstory #1: 1 point
+
 Userstory #2: 1 point
+
 Userstory #6: 1 point
+
 Userstory #7: 1 point
+
 Userstory #9: 2 points 
 
 
 Design Archecture: The Model View Controller (MVC) was used mainly for the profile creation activity and parts of the calendar view. It involves the usage of databases and datastorages that the user would interact with via user interface. For the calendar view, an Adapter design was used so the different views (Day view, Weekly View, Event View) would be able to share the same data and influence the UI accordingly.
+
+Warning/Error Removal: There were some errors left unattended because they were mainly refering to commented out code or miniscule issues with xml layout where Android Studio would find that the layout would be too wide for desktop screens which is irrelevent for our goals.
 
 
 # Second Iteration Report 
