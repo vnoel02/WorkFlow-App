@@ -5,9 +5,13 @@ We were unable to implement userstory #4 as there's not enough time to implement
 
 #### Velocity Points:
 Userstory #1: 1 point
+
 Userstory #2: 1 point
+
 Userstory #6: 1 point
+
 Userstory #7: 1 point
+
 Userstory #9: 2 points 
 
 
