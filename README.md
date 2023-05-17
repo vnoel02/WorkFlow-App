@@ -13,6 +13,8 @@ Userstory #9: 2 points
 
 Design Archecture: The Model View Controller (MVC) was used mainly for the profile creation activity and parts of the calendar view. It involves the usage of databases and datastorages that the user would interact with via user interface. For the calendar view, an Adapter design was used so the different views (Day view, Weekly View, Event View) would be able to share the same data and influence the UI accordingly.
 
+Warning/Error Removal: There were some errors left unattended because they were mainly refering to commented out code or miniscule issues with xml layout where Android Studio would find that the layout would be too wide for desktop screens which is irrelevent for our goals.
+
 
 # Second Iteration Report 
 Two new userstories were implemented. One userstory involves the connection between two parts of the app, profile creation and the organizational calendar. The other was a simple notification/toast that was provided from selecting a specific date. The main issues that arrived from implementing the userstories was combining the profile activity and the calendar activity as the calendar activity required a different package and methods to implement correctly compared to the straightforward profile creator. 
