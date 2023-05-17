@@ -15,6 +15,8 @@ import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+//Test for userstory #2 and its scenarios
 public class EventEditTest {
     @Rule
     public ActivityScenarioRule<MainActivity> profile = new ActivityScenarioRule<MainActivity>(MainActivity.class);
@@ -23,11 +25,11 @@ public class EventEditTest {
     public void testEventCreation() {
         onView(withId(R.id.weeklyButton)).perform(click());
         onView(withId(R.id.eventButton)).perform(click());
-        onView(withId(R.id.eventNameET)).perform(typeText("Exercise 1"),closeSoftKeyboard());
+        onView(withId(R.id.eventNameET)).perform(typeText("Exercise 2"),closeSoftKeyboard());
         onView(withId(R.id.eventTimeTV)).perform(click());
         onView(withText("OK")).perform(click());
         onView(withId(R.id.saveButton)).perform(click());
-        onView(withText("Exercise 1 12:00:00 AM")).perform(click());
+        onView(withText("Exercise 2 12:00:00 AM")).perform(click());
 
     }
 

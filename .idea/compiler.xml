@@ -3,6 +3,7 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="11">
       <module name="cisc3171proj-9-inc.WorkFlow.app" target="17" />
+      <module name="WorkFlow.app" target="20" />
     </bytecodeTargetLevel>
   </component>
 </project>
