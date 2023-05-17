@@ -94,14 +94,11 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
     }
     private void setOnclickListener() {
 
-        eventListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                Event selectedEvent = (Event) eventListView.getItemAtPosition(position);
-                Intent editEventIntent = new Intent(getApplicationContext(), EventEditActivity.class);
-                editEventIntent.putExtra(Event.Event_Edit_Extra,selectedEvent.getId());
-                startActivity(editEventIntent);
-            }
+        eventListView.setOnItemClickListener((adapterView, view, position, l) -> {
+            Event selectedEvent = (Event) eventListView.getItemAtPosition(position);
+            Intent editEventIntent = new Intent(getApplicationContext(), EventEditActivity.class);
+            editEventIntent.putExtra(Event.Event_Edit_Extra,selectedEvent.getId());
+            startActivity(editEventIntent);
         });
     }
 

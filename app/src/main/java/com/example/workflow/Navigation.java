@@ -19,15 +19,6 @@ public class Navigation extends Activity {
         } else {
             intent = new Intent(Navigation.this, WelcomeScreen.class);
         }
-
-//        Intent intent;
-//        Global g = (Global) getApplicationContext();
-//        if (g.createdProfile) {
-//            intent = new Intent(Navigation.this, MainActivity.class);
-//        } else {
-//            intent = new Intent(Navigation.this, WelcomeScreen.class);
-//        }
-
         startActivity(intent);
         finish();
     }

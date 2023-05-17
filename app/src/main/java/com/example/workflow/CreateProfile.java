@@ -79,8 +79,6 @@ public class CreateProfile extends AppCompatActivity {
 
                     Intent intent = new Intent(com.example.workflow.CreateProfile.this, MainActivity.class);
                     editor.apply();
-                    Global s = new Global();
-                    s.createdProfile = true;
                     startActivity(intent);
                 }
             }
@@ -106,6 +104,7 @@ public class CreateProfile extends AppCompatActivity {
                     if (result.getResultCode() == Activity.RESULT_OK) {
                         Intent intent = result.getData();
                         ImageView testim = findViewById(R.id.galleryImage);
+                        assert intent != null;
                         Uri selectIm = intent.getData();
 
                         testim.setImageURI(selectIm);
@@ -125,6 +124,7 @@ public class CreateProfile extends AppCompatActivity {
                         }
 
                         ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                        assert bitmap != null;
                         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
                         byte[] b = baos.toByteArray();
 
@@ -143,7 +143,4 @@ public class CreateProfile extends AppCompatActivity {
         mStartForResult.launch(new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI));
 
     }
-
-
-
 }

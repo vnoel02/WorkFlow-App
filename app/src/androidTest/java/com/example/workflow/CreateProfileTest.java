@@ -7,20 +7,18 @@ import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
-import static org.junit.Assert.*;
 
-import androidx.test.core.app.ActivityScenario;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 
 import org.junit.Rule;
 import org.junit.Test;
-import org.junit.runner.RunWith;
+
 
 
 //test User stories#9,7
 public class CreateProfileTest {
     @Rule
-    public ActivityScenarioRule<CreateProfile> profile = new ActivityScenarioRule<CreateProfile>(CreateProfile.class);
+    public ActivityScenarioRule<CreateProfile> profile = new ActivityScenarioRule<>(CreateProfile.class);
 
     @Test
     public void testProfileCreation() {

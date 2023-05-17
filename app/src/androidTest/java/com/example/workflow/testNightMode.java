@@ -2,8 +2,6 @@ package com.example.workflow;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
-import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
-import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.hasTextColor;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
@@ -20,7 +18,7 @@ public class testNightMode {
     public ActivityScenarioRule<ProfileViewActivity> profile = new ActivityScenarioRule<ProfileViewActivity>(ProfileViewActivity.class);
 
     @Test
-    public void testEventCreation() {
+    public void testNightMode() {
         onView(withId(R.id.btnDarkMode)).perform(click());
         onView(withId(R.id.btnDarkMode)).perform(click());
         //Just one detail to ensure night mode change

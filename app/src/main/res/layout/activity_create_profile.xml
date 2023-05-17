@@ -43,13 +43,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="112dp"
-        android:text="Create Profile"
+        android:text="@string/create_profile"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
+        android:autofillHints="First Name"
         android:id="@+id/first_name"
         android:layout_width="276dp"
         android:layout_height="48dp"
@@ -66,6 +67,7 @@
         tools:visibility="visible" />
 
     <EditText
+        android:autofillHints="Last Name"
         android:id="@+id/last_name"
         android:layout_width="277dp"
         android:layout_height="48dp"
@@ -80,6 +82,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
+        android:autofillHints="emailAddress"
         android:id="@+id/email"
         android:layout_width="280dp"
         android:layout_height="48dp"
@@ -95,6 +98,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
+        android:autofillHints="username"
         android:id="@+id/user_name"
         android:layout_width="279dp"
         android:layout_height="48dp"
@@ -140,7 +144,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/galleryImage"
         android:onClick="onSetImage"
-        android:contentDescription="Add A Photo" />
+        android:contentDescription="@string/add_a_photo" />
 
 
 
